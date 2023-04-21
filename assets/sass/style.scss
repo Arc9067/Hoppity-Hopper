@@ -1,0 +1,357 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700;800&family=Raleway:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  /*===== Colores =====*/
+  --first-color: #46f600;
+  --second-color: #559302;
+  --body-bg: #130532;
+  --white: #fff;
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Work Sans", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: #fff;
+  background-color: var(--body-bg);
+  overflow-x: hidden;
+}
+
+section,
+main {
+  overflow-x: hidden !important;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  max-width: 500px;
+}
+
+/*===== CLASS CSS ===== */
+a.custom-btn {
+  padding: 16px 32px;
+  background: var(--first-color);
+  border-radius: 20px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  display: block;
+  width: max-content;
+}
+
+a.buy-btn:hover {
+  transform: scale(0.8);
+}
+
+header.open {
+  background-color: var(--body-bg) !important;
+}
+
+header {
+  // height: 5rem;
+  width: 100%;
+  padding-block: 10px;
+  position: absolute;
+  top: 0;
+  z-index: var(--z-fixed);
+  // background-color: var(--second-color);
+
+  .container {
+    a.nav-logo {
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 38px;
+      text-align: center;
+      color: #ffffff;
+    }
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      padding: 0;
+
+      .close {
+        display: none;
+      }
+    }
+    button.open {
+      .close {
+        display: block;
+      }
+      .open {
+        display: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      a.buy-btn {
+        display: none;
+      }
+    }
+    ul.nav-ul {
+      height: 0;
+      width: 100%;
+      // background-color: red;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      transition: height 0.3s linear;
+
+      li {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 37px;
+        /* identical to box height */
+
+        color: #ffffff;
+      }
+      li.active {
+        background: var(--first-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+    ul.open {
+      height: 300px;
+    }
+  }
+}
+
+#hero {
+  width: 100%;
+  background: url(../images/hero-bg.png) center center no-repeat;
+  background-size: cover;
+  padding-block: 100px;
+
+  h1.title {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 85px;
+    color: #ffffff;
+
+    @media (max-width: 700px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+  p.info {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+}
+
+main {
+  width: 100%;
+
+  #about {
+    width: 100%;
+    padding-block: 50px;
+
+    h1.title {
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
+      color: #ffffff;
+
+      @media (max-width: 700px) {
+        font-size: 40px;
+        line-height: 120%;
+      }
+    }
+    p.info {
+      font-family: "Work Sans", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: #ffffff;
+    }
+  }
+
+  // #links {
+  //   width: 100%;
+  //   background-color: var(--second-color);
+  //   padding-block: 50px;
+  //   .slider-container {
+  //     width: 100%;
+  //     overflow: hidden;
+  //   }
+
+  //   .slider-wrapper {
+  //     display: grid;
+  //     grid-template-columns: repeat(4, 208px);
+  //     animation: slide 10s linear infinite;
+  //     background-color: purple;
+  //     width: 100%;
+  //   }
+
+  //   .slider-item {
+  //     width: 33.33%;
+  //     text-align: center;
+  //     font-size: 24px;
+  //   }
+
+  //   @keyframes slide {
+  //     0% {
+  //       transform: translateX(0%);
+  //     }
+  //     100% {
+  //       transform: translateX(-100%);
+  //     }
+  //   }
+  // }
+
+  #tokenomics {
+    width: 100%;
+    padding-block: 50px;
+    h1.title {
+      font-family: "Changa", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 120%;
+      text-align: center;
+      color: #ffffff;
+      max-width: 400px;
+
+      @media (max-width: 700px) {
+        font-size: 40px;
+        line-height: 120%;
+      }
+    }
+    .row {
+      div {
+        background: linear-gradient(180deg, #559302 0%, #c2b46e 100%);
+        border-radius: 20px;
+        min-height: 359px;
+        position: relative;
+
+        @media (min-width: 900px) {
+          width: 372px !important;
+        }
+
+        img {
+          position: absolute;
+          top: -20px;
+        }
+        h2.head {
+          font-family: "Work Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 140%;
+          text-align: center;
+          color: #130532;
+          margin-top: 100px !important;
+        }
+        p {
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 140%;
+          text-align: center;
+          color: #130532;
+        }
+        h1.head {
+          font-family: "Changa", sans-serif;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 64px;
+          line-height: 120%;
+          text-align: center;
+          color: #130532;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding-block: 50px;
+  background-color: var(--second-color);
+  width: 100%;
+
+  @media (max-width: 700px) {
+    .container {
+      justify-content: center !important;
+    }
+  }
+
+  a.footer-logo {
+    font-family: "Changa", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 66px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
